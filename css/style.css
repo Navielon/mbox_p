@@ -345,7 +345,7 @@ body {
 
 .shows__link {
   display: block;
-  transition: 0.2s ease filter;
+  transition: 0.2s ease;
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -355,6 +355,7 @@ body {
 
 .shows__link:hover {
   filter: drop-shadow(0rem 0rem 2rem rgba(44, 176, 249, 0.5));
+  transform: scale(1.1);
 }
 
 .shows__img {
@@ -450,7 +451,7 @@ body {
 
 .movies__link {
   display: block;
-  transition: 0.2s ease filter;
+  transition: 0.2s ease;
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -460,6 +461,7 @@ body {
 
 .movies__link:hover {
   filter: drop-shadow(0rem 0rem 3rem rgba(75, 44, 249, 0.5));
+  transform: scale(1.1);
 }
 
 .movies__img {
@@ -804,5 +806,3 @@ footer {
 }
 
 .footer-list__item {
-  margin-bottom: 1.5rem;
-}
