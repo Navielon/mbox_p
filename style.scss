@@ -1,0 +1,780 @@
+//================== Шаблоны цветов ======================================================================================================================================
+$dark: #000;
+$white: #fff;
+$gray: #C2C2C2;
+$sdark: #323232;
+$fdark: #101012;
+$border: #2F2E2E;
+$sgradient: rgba(50, 108, 255, 1);
+$gradient: linear-gradient(316.53deg, #26FFF2 13.2%, #326CFF 71.54%);
+$n-gradient: linear-gradient(316.53deg, #326CFF 13.2%, #26FFF2 71.54%);
+$genre_01: linear-gradient(109.31deg, #FD093F 2.4%, #F383F1 100%);
+$genre_02: linear-gradient(114.5deg, #0FFFDA 2.22%, #3CDB77 68.84%);
+$genre_03: linear-gradient(109.31deg, #B936FF 2.4%, #57DEDA 100%);
+$genre_04: linear-gradient(109.31deg, #FD093F 2.4%, #FB1378 2.41%, #FCCB1A 100%);
+$genre_05: linear-gradient(109.31deg, #FF6472 2.4%, #FDA75D 100%);
+$genre_06: linear-gradient(110.16deg, #13547A 2.37%, #80D0C7 96.77%);
+$genre_07: linear-gradient(109.93deg, #FFF77B 2.37%, #FFBF42 50%);
+$genre_08: linear-gradient(109.31deg, #1FA2FF 2.4%, #1FA2FF 2.41%, #1F535C 97.46%);
+//========================================================================================================================================================
+//?========================================================================================================================================================
+//================== Шрифты ======================================================================================================================================
+@import url("https://fonts.googleapis.com/css?family=Marcellus:400&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Mulish:400,600,700,800&display=swap");
+// font-family: 'Marcellus', serif;
+//========================================================================================================================================================
+html {
+    font-size: 10px;
+}
+//========================================================================================================================================================
+//?========================================================================================================================================================
+//!======= Видимая часть сайта=================================================================================================================================================
+body{
+    background-color: $dark;
+    color: $white;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 2rem;
+    font-family: 'Mulish', sans-serif;
+}
+//========================================================================================================================================================
+//?========================================================================================================================================================
+//TODO======== Хедер =============================================================================================================================================
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 160rem;
+    padding: 2rem;
+    margin: 0 auto;
+}
+//========================================================================================================================================================
+//?========================================================================================================================================================
+//============ Меню навигации ============================================================================================================================================
+.nav{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding-left: 36.6rem;
+    padding-right: 32rem;
+    &-item{
+        margin: 0 1.5rem;
+    }
+    &-link{
+        color: $white;
+        text-decoration: none;
+        opacity: 0.5;
+        &::after{
+            content: '';
+            opacity: 0;
+            width: 100%;
+            height: 0.2rem;
+            display: block;
+            margin-top: 0.5rem;
+            border-radius: 5rem;
+            background: $sgradient;
+            background: $gradient;
+        }
+        &.active{
+            color: $white;
+            text-decoration: none;
+            opacity: 1;
+            font-weight: 800;
+            &::after{
+                opacity: 1;
+            }
+        }
+    }
+    &-link{
+        transition: opacity .3s linear;
+        &:hover{
+            text-shadow: 0 0 .9px $white, 0 0 .9px $white;
+            opacity: 1;
+        }
+        &:hover::after{
+            opacity: 1;
+
+        }
+    }
+}
+//========================================================================================================================================================
+//?========================================================================================================================================================
+//========= Кнопки внутри навигации ===============================================================================================================================================
+.control{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    &-item{
+        margin-left: 7.5rem;
+        }
+    &-btn{
+        display: block;
+        background-color: transparent;
+        border: none;
+        background-repeat: no-repeat;
+        &__search{
+            background-image: url(../img/icons/search.svg);
+            width: 2rem;
+            height: 2rem;
+            transition: 0.3s ease;
+            &:hover{
+                cursor: pointer;
+            transform: scale(1.2);
+
+            }
+        }
+        &__notice{
+            background-image: url(../img/icons/notice.svg);
+            width: 2rem;
+            height: 2rem;
+            transition: 0.3s ease;
+            &:hover{
+                cursor: pointer;
+            transform: scale(1.2);
+
+            }
+        }
+        &__account{
+            background-image: url(../img/icons/account.svg);
+            width: 2rem;
+            height: 2rem;
+            transition: 0.3s ease;
+            &:hover{
+                cursor: pointer;
+            transform: scale(1.2);
+
+            }
+        }
+
+    }
+}
+//========================================================================================================================================================
+//========================================================================================================================================================
+
+.section-banner{
+    border-bottom: 0.1rem solid $border;
+    position: relative;
+    overflow: hidden;
+    &__image{
+        position: absolute;
+        right: 0;
+        padding-right: 5rem;
+        z-index: -1;
+        height: 100%;
+    }
+}
+.container-banner{
+    max-width: 144rem;
+    padding: 0 1.5rem;
+    margin: 0 auto;
+    margin-top: -5.6rem;
+
+}
+.container{
+    max-width: 144rem;
+    padding: 0 1.5rem;
+    margin: 0 auto;
+
+}
+.banner{
+    box-shadow: 18rem 0rem 10rem $dark;
+    max-width: 56.2rem;
+    height: 100%;
+    background-color: $dark;
+    &__title{
+        font-family: 'Marcellus', serif;
+        font-weight: 400;
+        font-size: 8rem;
+        line-height: 7rem;
+        padding-top: 12.1rem;
+    }
+    &__text{
+        color: $gray;
+        font-size: 1.8rem;
+        line-height: 2.8rem;
+        margin-bottom: 3.5rem;
+    }
+    &-info{
+        line-height: 1rem;
+        font-weight: 800;
+        margin-bottom: 3.2rem;
+        margin-top: 3.9rem;
+            &__year{
+            margin-right: 1.8rem;
+            }
+            
+            &__age{
+            margin-right: 1.8rem;
+            line-height: 1.2rem;
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            width: 6rem;
+            &::before{
+                content: '';
+                display: block;
+                width: 100%;
+                height: 2.4rem;
+                background-image: url(../img/icons/border.svg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: absolute;
+                top: calc(50% - 1.2rem);
+                left: 0;
+                right: 0;
+            }
+            }
+        &__time{
+            margin-right: 4.1rem;
+        }
+        &__rating{
+            position: relative;
+            &::after{
+                content: '';
+                display: block;
+                width: 1.6rem;
+                height: 1.6rem;
+                background-image: url(../img/icons/star.svg);
+                margin-left: 1rem;
+                position: absolute;
+                top: calc(50% - .8rem);
+                right: -2.6rem;
+            }
+        }
+    }
+    &-control{
+        &__btn{
+            background-color: transparent;
+            border: none;
+            border-radius: 10rem;
+            padding: 1.5rem 3rem;
+            font-family: 'Mulish', sans-serif;
+            font-weight: 800;
+            margin-bottom: 20.4rem;
+            display: inline-block;
+            &:hover,:focus{
+                cursor: pointer;
+                outline: none;
+            }
+        }
+        &__btn-main{
+            background: $sgradient;
+            background: $gradient;
+            color: $white;
+            position: relative;
+            padding-left: 6rem;
+            margin-right: 3rem;
+            transition: 0.5s ease;
+            &::after{
+                content: '';
+                display: block;
+                width: 1.4rem;
+                height: 1.8rem;
+                background-image: url(../img/icons/play.svg);
+                position: absolute;
+                left: 3rem;
+                top: calc(50% - 0.9rem);
+            }
+            &:hover{
+            background: linear-gradient(109.31deg, #B936FF 2.4%, #57DEDA 100%);
+            box-shadow: 0rem 0rem 5rem #a201b180;
+            transform: scale(1.2);
+            }
+        }
+        &__btn-more{
+            background: linear-gradient(109.93deg, #fafafa 2.37%, #ffffff 50%);
+            color:$sdark;
+            transition: 0.5s ease;
+            &:hover{
+                transform: scale(1.2);
+                box-shadow: 0rem 0rem 5rem #e7d10880;
+                background: linear-gradient(109.93deg, #FFF77B 2.37%, #FFBF42 50%);
+            }
+        }
+    }
+}
+
+.section-shows{
+    padding-top: 6.2rem;
+    &__h2{
+        font-size: 2.8rem;
+        line-height: 2rem;
+        position: relative;
+        padding-left: 2rem;
+        padding-right: 3rem;
+        display: inline-block;
+        transition: 0.3s ease;
+        &::before{
+            content: '';
+            width: .8rem;
+            height: 3.5rem;
+            display: block;
+            border-radius: 5rem;
+            background: $sgradient;
+            background: $gradient;
+            position: absolute;
+            left: 0;
+            top: calc(50% - 1.75rem);
+        }
+        &::after{
+            content: '';
+            width: 1.4rem;
+            height: 1.8rem;
+            display: block;
+            background-image: url(../img/icons/play.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            right: 0;
+            top: calc(50% - 0.7rem);
+        }
+        &-link{
+            color: $white;
+            text-decoration: none;
+        }
+        &:hover{
+            transform: scale(1.05);
+        }
+    }
+}
+
+.shows{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2.5rem;
+    &__link{
+    display: block;
+    transition: 0.2s ease filter;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 30.9rem;
+    border-radius: 2rem;
+        &:hover{
+            filter: drop-shadow(0rem 0rem 2rem rgba(44, 176, 249, 0.5));
+        }
+    }
+    &__img{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        object-fit: cover;
+    }
+    &-item{
+        flex: 0 0 14%;
+    }
+}
+//========================================================================================================================================================
+//?========================================================================================================================================================
+//========================================================================================================================================================
+
+
+.section-movies{
+    padding-top: 6.2rem;
+    &__h2{
+        font-size: 2.8rem;
+        line-height: 2rem;
+        position: relative;
+        padding-left: 2rem;
+        padding-right: 3rem;
+        display: inline-block;
+        transition: 0.3s ease;
+        &::before{
+            content: '';
+            width: .8rem;
+            height: 3.5rem;
+            display: block;
+            border-radius: 5rem;
+            background: $sgradient;
+            background: $gradient;
+            position: absolute;
+            left: 0;
+            top: calc(50% - 1.75rem);
+        }
+        &::after{
+            content: '';
+            width: 1.4rem;
+            height: 1.8rem;
+            display: block;
+            background-image: url(../img/icons/play.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            right: 0;
+            top: calc(50% - 0.7rem);
+        }
+        &-link{
+            color: $white;
+            text-decoration: none;
+        }
+        &:hover{
+            transform: scale(1.05);
+        }
+    }
+    &__btn{
+        margin-top: 7rem;
+        background: $sgradient;
+        background: $gradient;
+        color: $white;
+        position: relative;
+        transition: 0.5s ease;
+        border: none;
+        border-radius: 10rem;
+        padding: 1.5rem 3.4rem;
+        font-family: 'Mulish', sans-serif;
+        font-weight: 800;
+        margin-bottom: 10rem;
+        display: inline-block;
+        &:hover{
+        background: linear-gradient(109.31deg, #4a36ff 5.4%, #de5c57 100%);
+        box-shadow: 0rem 0rem 5rem #b1010180;
+        transform: scale(1.2);
+        cursor: pointer;
+        }
+}
+}
+
+.movies{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 3rem;
+    &__link{
+    display: block;
+    transition: 0.2s ease filter;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 30.9rem;
+    border-radius: 2rem;
+        &:hover{
+            filter: drop-shadow(0rem 0rem 3rem rgba(75, 44, 249, 0.5));
+        }
+    }
+    &__img{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        object-fit: cover;
+    }
+    &-item{
+        flex: 0 0 14%;
+    }
+    
+}
+//========================================================================================================================================================
+//?========================================================================================================================================================
+//========================================================================================================================================================
+
+.section-genres{
+    &__h2{
+        font-size: 2.8rem;
+        line-height: 2rem;
+        position: relative;
+        padding-left: 2rem;
+        padding-right: 3rem;
+        display: inline-block;
+        transition: 0.3s ease;
+        &::before{
+            content: '';
+            width: .8rem;
+            height: 3.5rem;
+            display: block;
+            border-radius: 5rem;
+            background: $sgradient;
+            background: $gradient;
+            position: absolute;
+            left: 0;
+            top: calc(50% - 1.75rem);
+        }
+        &::after{
+            content: '';
+            width: 1.4rem;
+            height: 1.8rem;
+            display: block;
+            background-image: url(../img/icons/play.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            right: 0;
+            top: calc(50% - 0.7rem);
+        }
+        &-link{
+            color: $white;
+            text-decoration: none;
+        }
+        &:hover{
+            transform: scale(1.05);
+        }
+    }
+}
+
+.genres{
+    padding-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+    a{
+        text-decoration: none;
+    }
+    &-icon{
+        height: 8rem;
+        position: relative;
+        overflow: hidden;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        object-fit: cover; 
+        display: block;
+    }
+    &__image{
+        display: inline-block;
+        position: absolute;
+    }
+    &__title{
+        font-size: 2.8rem;
+        line-height: 2rem;
+        color: $white;
+        margin: 0.8rem 0 0 0;
+    }
+    &-item{
+        margin-top: 2rem;
+        flex: 0 0 23.7%;
+        border-radius: 2rem;
+        padding: 4.8rem 1rem 3.8rem;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        margin-bottom: 1rem;
+        transition: 0.3s ease;
+        &:hover{
+            transform: scale(1.1);
+        }
+        &_romance{
+            background: $genre_01;
+        }
+        &_drama {
+            background: $genre_02;
+            }
+    
+        &_historical {
+            background: $genre_03;
+            }
+    
+        &_action {
+            background: $genre_04;
+            }
+    
+        &_sci-fi {
+            background: $genre_05;
+            &-n{
+                height: 8rem;
+            }
+            }
+    
+        &_horror {
+            background: $genre_06;
+            }
+    
+        &_comedy {
+            background: $genre_07;
+            }
+    
+        &_doc {
+            background: $genre_08;
+            }
+    }
+}
+//========================================================================================================================================================
+//?========================================================================================================================================================
+//========================================================================================================================================================
+
+.section-actors{
+    padding-top: 7.8rem;
+    &__h2{
+        font-size: 2.8rem;
+        line-height: 2rem;
+        position: relative;
+        padding-left: 2rem;
+        padding-right: 3rem;
+        display: inline-block;
+        transition: 0.3s ease;
+        &::before{
+            content: '';
+            width: .8rem;
+            height: 3.5rem;
+            display: block;
+            border-radius: 5rem;
+            background: $sgradient;
+            background: $gradient;
+            position: absolute;
+            left: 0;
+            top: calc(50% - 1.75rem);
+        }
+        &::after{
+            content: '';
+            width: 1.4rem;
+            height: 1.8rem;
+            display: block;
+            background-image: url(../img/icons/play.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            right: 0;
+            top: calc(50% - 0.7rem);
+        }
+        &-link{
+            color: $white;
+            text-decoration: none;
+        }
+        &:hover{
+            transform: scale(1.05);
+        }
+    }
+}
+
+.actors{
+    padding-top: 4.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    &-item{
+        padding-top: 3.5rem;
+        flex: 0 0 14%;
+        opacity: 0.6;
+        transition: 0.3s ease;
+        &:hover{
+            opacity: 1;
+            transform: scale(1.1);
+        }
+    }
+    &__img{
+        object-fit: cover;
+        width: 19rem;
+        height: 19rem;
+        border-radius: 100%;
+        display: block;
+        margin-right: 3rem;
+        margin-left: 3rem;
+
+    }
+    &__link{
+        text-decoration: none;
+        color: $white;
+        font-size: 1.8rem;
+        line-height: 2rem;
+    }
+}
+//========================================================================================================================================================
+//?========================================================================================================================================================
+//========================================================================================================================================================
+.marketing{
+    padding-top: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    &-item{
+        flex: 0 0 50%;
+        transition: 0.3s ease;
+        border-radius: 2rem;
+        &:hover{
+            opacity: 1;
+        }
+    }
+    &__img{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        object-fit: cover;
+
+    }
+    &__link{
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        height: 34.1rem;
+        display: block;
+    }
+}
+.section-offers{
+    padding: 12.1rem 0;
+}
+.offer{
+    max-width: 124.4rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url(../img/bg_ft.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 2rem;
+    &__title{
+        font-size: 6.4rem;
+        line-height: 100%;
+        max-width: 80rem;
+        margin: 0;
+        padding: 7.1rem 0rem 7.1rem 5.7rem;
+        
+    }
+    &__btn{
+        background: $sgradient;
+        background: $gradient;
+        color: $white;
+        margin-right: 13rem;
+        transition: 0.5s ease;
+        border: none;
+        border-radius: 10rem;
+        padding: 1.5rem 3rem;
+        font-family: 'Mulish', sans-serif;
+        font-weight: 800;
+        font-size: 2.2rem;
+        &:hover{
+        background: linear-gradient(109.31deg, #ff36de 5.4%, #da9517 100%);
+        box-shadow: 0rem 0rem 5rem #e203ff80;
+        transform: scale(1.2);
+        cursor: pointer;
+        }
+    }
+}
+
+footer{
+    background-color: #101012;;
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+
+    max-width: 144rem;
+    padding: 1.5rem;
+    margin: 0 auto;
+    &-list{
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+        &__link {
+        font-weight: 600;
+        font-size: 1.8rem;
+        line-height: 2rem;
+        color: $gray;
+        text-decoration: none;
+        padding-top: 0;
+        &:hover{
+            text-decoration: underline;
+        }
+        }
+        &__item{
+        margin-bottom: 1.5rem;
+        }
+    }
+}
