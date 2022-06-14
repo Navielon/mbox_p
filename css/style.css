@@ -22,6 +22,12 @@ body {
   margin: 0 auto;
 }
 
+.container {
+  max-width: 144rem;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
+
 .nav {
   display: flex;
   align-items: center;
@@ -60,6 +66,7 @@ body {
 }
 
 .nav-link.active::after {
+  content: '';
   opacity: 1;
 }
 
@@ -72,7 +79,7 @@ body {
   opacity: 1;
 }
 
-.nav-link:hover::after {
+.nav-link:hover, .nav-link:focus {
   opacity: 1;
 }
 
@@ -83,7 +90,7 @@ body {
 }
 
 .control-item {
-  margin-left: 7.5rem;
+  margin: 0 3.75rem;
 }
 
 .control-btn {
@@ -100,7 +107,7 @@ body {
   transition: 0.3s ease;
 }
 
-.control-btn__search:hover {
+.control-btn__search:hover, .control-btn__search:focus {
   cursor: pointer;
   transform: scale(1.2);
 }
@@ -148,12 +155,6 @@ body {
   padding: 0 1.5rem;
   margin: 0 auto;
   margin-top: -5.6rem;
-}
-
-.container {
-  max-width: 144rem;
-  padding: 0 1.5rem;
-  margin: 0 auto;
 }
 
 .banner {
@@ -243,9 +244,8 @@ body {
   display: inline-block;
 }
 
-.banner-control__btn:hover, .banner-control__btn :focus {
+.banner-control__btn:hover {
   cursor: pointer;
-  outline: none;
 }
 
 .banner-control__btn-main {
@@ -293,7 +293,6 @@ body {
 
 .section-shows__h2 {
   font-size: 2.8rem;
-  line-height: 2rem;
   position: relative;
   padding-left: 2rem;
   padding-right: 3rem;
@@ -376,7 +375,6 @@ body {
 
 .section-movies__h2 {
   font-size: 2.8rem;
-  line-height: 2rem;
   position: relative;
   padding-left: 2rem;
   padding-right: 3rem;
@@ -478,7 +476,6 @@ body {
 
 .section-genres__h2 {
   font-size: 2.8rem;
-  line-height: 2rem;
   position: relative;
   padding-left: 2rem;
   padding-right: 3rem;
@@ -545,16 +542,10 @@ body {
   display: block;
 }
 
-.genres__image {
-  display: inline-block;
-  position: absolute;
-}
-
 .genres__title {
   font-size: 2.8rem;
-  line-height: 2rem;
   color: #fff;
-  margin: 0.8rem 0 0 0;
+  margin-top: 3rem;
 }
 
 .genres-item {
@@ -613,7 +604,6 @@ body {
 
 .section-actors__h2 {
   font-size: 2.8rem;
-  line-height: 2rem;
   position: relative;
   padding-left: 2rem;
   padding-right: 3rem;
@@ -682,15 +672,13 @@ body {
   height: 19rem;
   border-radius: 100%;
   display: block;
-  margin-right: 3rem;
-  margin-left: 3rem;
+  margin: 0 3rem;
 }
 
 .actors__link {
   text-decoration: none;
   color: #fff;
   font-size: 1.8rem;
-  line-height: 2rem;
 }
 
 .marketing {
@@ -703,12 +691,7 @@ body {
 
 .marketing-item {
   flex: 0 0 50%;
-  transition: 0.3s ease;
   border-radius: 2rem;
-}
-
-.marketing-item:hover {
-  opacity: 1;
 }
 
 .marketing__img {
@@ -774,7 +757,7 @@ body {
 
 footer {
   background-color: #101012;
-  padding-top: 3rem;
+  padding-top: 5rem;
   padding-bottom: 1.5rem;
 }
 
@@ -795,7 +778,6 @@ footer {
 .footer-list__link {
   font-weight: 600;
   font-size: 1.8rem;
-  line-height: 2rem;
   color: #C2C2C2;
   text-decoration: none;
   padding-top: 0;
@@ -806,3 +788,5 @@ footer {
 }
 
 .footer-list__item {
+  margin-bottom: 1.5rem;
+}
