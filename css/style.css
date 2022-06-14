@@ -71,7 +71,7 @@ body {
 }
 
 .nav-link {
-  transition: opacity .3s linear;
+  transition: .3s;
 }
 
 .nav-link:hover {
@@ -79,7 +79,7 @@ body {
   opacity: 1;
 }
 
-.nav-link:hover, .nav-link:focus {
+.nav-link:hover::after {
   opacity: 1;
 }
 
